@@ -1,0 +1,9 @@
+.flex {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 25px;
+}
+.buttons {
+    margin: 25px;
+}
