@@ -8,7 +8,7 @@ import { DownloadOutlined } from "@ant-design/icons";
 import { UploadOutlined } from "@ant-design/icons";
 
 export default function ItemList({ isDropable, handleUpdateDropable }) {
-  const [cards, setCards] = useState(Objects);
+  const [cards] = useState(Objects);
 
   const [addedElements, setAddedElements] = useState([]);
   const [selectedImages, setSelectedImages] = useState([]);
@@ -102,7 +102,7 @@ export default function ItemList({ isDropable, handleUpdateDropable }) {
             isDropable={isDropable}
             handleUpdateDropable={handleUpdateDropable}
             card={element}
-            key={element.imgSrc}
+            key={element.id}
             addedElements={addedElements}
             addElements={addElements}
             updateElements={updateElements}
@@ -117,7 +117,7 @@ export default function ItemList({ isDropable, handleUpdateDropable }) {
       })}
 
       <div className={styles.buttons}>
-        <Upload {...uploadProps}>
+        <Upload {...uploadProps} className={styles.btn}>
           <Button icon={<UploadOutlined />}>Upload objects</Button>
         </Upload>
 

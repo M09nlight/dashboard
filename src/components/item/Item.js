@@ -22,7 +22,6 @@ export default function Item({
       if (!id) {
         addElements(card, x, y);
       } else {
-        console.log("card before update", card);
         updateElements(id, card, x, y);
       }
       handleUpdateDropable(false);
