@@ -18,3 +18,5 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_DASHBOARD_7A5AF }}"
           channelId: live
           projectId: drag-to-dashboard-7a5af
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
