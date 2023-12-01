@@ -12,7 +12,6 @@ export default function Item({
 }) {
   const dragEndHandler = (e, id) => {
     e.preventDefault();
-    console.log("dragEnd", isDropable);
     if (isDropable) {
       const { pageX, pageY } = e;
       const imageWidth = e.target.getBoundingClientRect().width;
