@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Dashboard from "./components/dashboard/Dashboard";
-import ObjectList from "./components/item-list/ItemList";
+import ItemList from "./components/item-list/ItemList";
 
 function App() {
   const [isDropable, setIsDropable] = useState(false);
@@ -11,7 +11,7 @@ function App() {
   };
   return (
     <>
-      <ObjectList
+      <ItemList
         isDropable={isDropable}
         handleUpdateDropable={handleUpdateDropable}
       />

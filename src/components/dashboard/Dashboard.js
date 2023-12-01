@@ -12,7 +12,7 @@ export default function Dashboard({ isDropable, handleUpdateDropable }) {
   return (
     <div
       onDragOver={(e) => dragOverHandler(e)}
-      onDragStart={(e) => dragOverHandler(e)}
+      onDragEnter={(e) => dragOverHandler(e)}
       onDragLeave={dragLeaveHandler}
       className={styles.dashboard}
     >
