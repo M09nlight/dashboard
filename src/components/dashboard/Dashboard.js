@@ -1,14 +1,22 @@
 import React from "react";
 import styles from "./Dashboard.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { updateDropable } from "../../redux/dashboard/dashboardSlice";
 
-export default function Dashboard({ isDropable, handleUpdateDropable }) {
+export default function Dashboard() {
+  const isDropable = useSelector((state) => state.dashboard.isDropable);
+  const dispatch = useDispatch();
   const dragOverHandler = (e) => {
     e.preventDefault();
-    handleUpdateDropable(true);
+    dispatch(updateDropable(true));
+    console.log("true");
   };
   const dragLeaveHandler = (e) => {
-    handleUpdateDropable(false);
+    e.preventDefault();
+    dispatch(updateDropable(false));
+    console.log("false");
   };
+  console.log(isDropable);
   return (
     <div
       onDragOver={(e) => dragOverHandler(e)}
@@ -16,7 +24,11 @@ export default function Dashboard({ isDropable, handleUpdateDropable }) {
       onDragLeave={dragLeaveHandler}
       className={styles.dashboard}
     >
-      <div className={isDropable ? styles.wrapper : ""}></div>
+      <div
+        className={
+          isDropable ? `${styles.wrapperBg} ${styles.wrapper}` : styles.wrapper
+        }
+      ></div>
     </div>
   );
 }

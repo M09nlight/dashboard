@@ -5,12 +5,14 @@
     background: url("../../../public/img/bg.jpg") 0 0/100% auto no-repeat;
     position: relative;
 }
+.wrapperBg {
+    background-color: #9b9292;
+    opacity: 0.3;
+}
 .wrapper {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     top: 0;
-    background-color: #9b9292;
-    opacity: 0.1;
 }

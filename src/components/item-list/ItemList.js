@@ -7,7 +7,7 @@ import { Button, Upload } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
 import { UploadOutlined } from "@ant-design/icons";
 
-export default function ItemList({ isDropable, handleUpdateDropable }) {
+export default function ItemList() {
   const [cards] = useState(Objects);
 
   const [addedElements, setAddedElements] = useState([]);
@@ -84,8 +84,6 @@ export default function ItemList({ isDropable, handleUpdateDropable }) {
         {cards.map((card) => {
           return (
             <Item
-              isDropable={isDropable}
-              handleUpdateDropable={handleUpdateDropable}
               card={card}
               key={card.imgSrc}
               addedElements={addedElements}
@@ -99,8 +97,6 @@ export default function ItemList({ isDropable, handleUpdateDropable }) {
       {addedElements.map((element) => {
         return (
           <Item
-            isDropable={isDropable}
-            handleUpdateDropable={handleUpdateDropable}
             card={element}
             key={element.id}
             addedElements={addedElements}

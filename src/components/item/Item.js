@@ -1,15 +1,18 @@
 import React from "react";
 import styles from "./Item.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { updateDropable } from "../../redux/dashboard/dashboardSlice";
 
 export default function Item({
   card,
   addElements,
   updateElements,
-  isDropable,
-  handleUpdateDropable,
   style,
   elemId,
 }) {
+  const isDropable = useSelector((state) => state.dashboard.isDropable);
+  const dispatch = useDispatch();
+
   const dragEndHandler = (e, id) => {
     e.preventDefault();
     if (isDropable) {
@@ -24,7 +27,7 @@ export default function Item({
       } else {
         updateElements(id, card, x, y);
       }
-      handleUpdateDropable(false);
+      dispatch(updateDropable(false));
     }
   };
 
