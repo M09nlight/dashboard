@@ -9,12 +9,10 @@ export default function Dashboard() {
   const dragOverHandler = (e) => {
     e.preventDefault();
     dispatch(updateDropable(true));
-    console.log("true");
   };
   const dragLeaveHandler = (e) => {
     e.preventDefault();
     dispatch(updateDropable(false));
-    console.log("false");
   };
   console.log(isDropable);
   return (

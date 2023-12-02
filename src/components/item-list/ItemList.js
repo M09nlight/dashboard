@@ -52,10 +52,6 @@ export default function ItemList() {
     }
   };
   useEffect(() => {
-    addImages();
-  }, [selectedImages]);
-
-  const addImages = () => {
     const newElements = selectedImages.map((image) => ({
       id: image.id,
       imgSrc: image.imgSrc,
@@ -63,7 +59,7 @@ export default function ItemList() {
     }));
 
     setAddedElements((prevElements) => [...prevElements, ...newElements]);
-  };
+  }, [selectedImages]);
 
   const uploadProps = {
     showUploadList: false,
